@@ -73,8 +73,8 @@ class Zookeeper
     }
 
     /**
-     * @param $host
-     * @param $watcher_cb
+     * @param string $host
+     * @param callable $watcher_cb
      * @param int $recv_timeout
      */
     public function connect($host, $watcher_cb = null, $recv_timeout = 10000)
@@ -82,135 +82,148 @@ class Zookeeper
     }
 
     /**
-     * @param $path
-     * @param $value
+     * @param string $path
+     * @param string $value
      * @param $acl
-     * @param $flags
+     * @param integer $flags
+     * @return string
      */
     public function create($path, $value, $acl, $flags = null)
     {
     }
 
     /**
-     * @param $path
+     * @param string $path
      * @param int $version
+     * @return bool
      */
     public function delete($path, $version = -1)
     {
     }
 
     /**
-     * @param $path
-     * @param $data
+     * @param string $path
+     * @param string $data
      * @param int $version
-     * @param $stat
+     * @param mixed $stat
+     * @param bool
      */
     public function set($path, $data, $version = -1, &$stat = null)
     {
     }
 
     /**
-     * @param $path
-     * @param $watcher_cb
-     * @param $stat
+     * @param string $path
+     * @param callable $watcher_cb
+     * @param mixed $stat
      * @param int $max_size
+     * @return string
      */
     public function get($path, $watcher_cb = null, &$stat = null, $max_size = 0)
     {
     }
 
     /**
-     * @param $path
-     * @param $watcher_cb
+     * @param string $path
+     * @param callable $watcher_cb
+     * @return array
      */
     public function getChildren($path, $watcher_cb = null)
     {
     }
 
     /**
-     * @param $path
-     * @param $watcher_cb
+     * @param string $path
+     * @param callable $watcher_cb
+     * @return array | false
      */
     public function exists($path, $watcher_cb = null)
     {
     }
 
     /**
-     * @param $path
+     * @param string $path
+     * @return array
      */
     public function getAcl($path)
     {
     }
 
     /**
-     * @param $path
-     * @param $version
-     * @param $acls
+     * @param string $path
+     * @param integer $version
+     * @param array $acls
+     * @return bool
      */
     public function setAcl($path, $version, $acls)
     {
     }
 
     /**
-     *
+     * @return array
      */
     public function getClientId()
     {
     }
 
     /**
-     * @param $watcher_cb
+     * @param callable $watcher_cb
+     * @return bool
      */
     public function setWatcher($watcher_cb)
     {
     }
 
     /**
-     *
+     * @return integer
      */
     public function getState()
     {
     }
 
     /**
-     *
+     * @return integer
      */
     public function getRecvTimeout()
     {
     }
 
     /**
-     * @param $scheme
-     * @param $cert
-     * @param $completion_cb
+     * @param string $scheme
+     * @param string $cert
+     * @param callable $completion_cb
+     * @return bool
      */
     public function addAuth($scheme, $cert, $completion_cb = null)
     {
     }
 
     /**
-     *
+     * @return bool
      */
     public function isRecoverable()
     {
     }
 
     /**
-     * @param $file
+     * @param mixed $file
+     * @return bool
      */
     public function setLogStream($file)
     {
     }
 
     /**
-     * @param $level
+     * @param integer $level
+     * @return bool
      */
     static public function setDebugLevel($level)
     {
     }
 
     /**
-     * @param $trueOrFalse
+     * @param bool $trueOrFalse
+     * @return bool
      */
     static public function setDeterministicConnOrder($trueOrFalse)
     {
